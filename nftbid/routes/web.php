@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front.index');
 });
+Route::get('/admin', function () {
+    return view('dash.index');
+});
 Route::get('/contacto',function(){
     echo "ESTAS EN CONTACTO";
 });
@@ -29,3 +32,6 @@ Route::get('/productos',function(){
             ->with('usuario', $usuario)
             ->with('numero', $num);
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
