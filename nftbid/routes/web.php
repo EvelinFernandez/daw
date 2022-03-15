@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Dash\ProductosController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dash\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,11 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('dash.index');
 });
+Route::get('/admin/productos', [ProductosController::class, 'miFuncion']);
+Route::post('/admin/productos', [ProductosController::class, 'insertar']);
+
+Route::get('/admin/categorias', [CategoriesController::class, 'index']);
+Route::post('/admin/categorias', [CategoriesController::class, 'store']);
 Route::get('/contacto',function(){
     echo "ESTAS EN CONTACTO";
 });
