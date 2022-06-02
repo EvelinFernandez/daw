@@ -36,7 +36,7 @@
                     <!-- Logo -->
                     <div class="logo">
                         <a href="index.html">
-                            <h1>NftsBids</h1>
+                            <h1>NFTsBids</h1>
                         </a>
                     </div>
                     <!--/ End Logo -->
@@ -64,9 +64,9 @@
                                 <option>mobile</option>
                                 <option>kid’s item</option>
                             </select>
-                            <form>
+                            <form action="/search" method="GET">
                                 <input name="search" placeholder="Search Products Here....." type="search">
-                                <button class="btnn"><i class="ti-search"></i></button>
+                                <button class="btnn" type="submit" ><i class="ti-search"></i></button>
                             </form>
                         </div>
                     </div>
@@ -197,8 +197,8 @@
                                 <div class="navbar-collapse">	
                                     <div class="nav-inner">	
                                         <ul class="nav main-menu menu navbar-nav">
-                                                <li class=""><a href="#">Home</a></li>
-                                                <li class="/productos">Productos</a></li>											
+                                                <li class=""><a href="/">Home</a></li>
+                                                <li><a href="/productos">Products</a></li>												
                                                 <li><a href="#">Service</a></li>
                                                 <li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
                                                     <ul class="dropdown">

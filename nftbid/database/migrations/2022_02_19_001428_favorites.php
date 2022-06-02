@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('favorites', function (Blueprint $table){
             $table->increments('id');
-            $table->string('category');
-            $table->string('img');
-            $table->timestamps();
+            $table->integer('id_nft')->unsigned();
+            $table->integer('id_user')->unsigned();
+            $table->timestamps();  
+            $table->foreign('id_nft')->references('id')->on('nfts');
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('favorites');
     }
 };

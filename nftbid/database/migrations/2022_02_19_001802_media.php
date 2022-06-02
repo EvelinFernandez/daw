@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('collections_items', function (Blueprint $table){
+        Schema::create('media', function (Blueprint $table){
             $table->increments('id');
-            $table->integer('id_collection');
             $table->integer('id_nft')->unsigned();
+            $table->string('type');
+            $table->string('filename');
+            $table->timestamps();  
             $table->foreign('id_nft')->references('id')->on('nfts');
-            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('collections_items');
+        Schema::dropIfExists('media');
     }
 };

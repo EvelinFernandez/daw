@@ -15,9 +15,9 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')-> insert(['category'=>'Art', 'img'=>'default.jpg']);
-        DB::table('categories')-> insert(['category'=>'Musica', 'img'=>'default.jpg']);
-        DB::table('categories')-> insert(['category'=>'Photography', 'img'=>'default.jpg']);
-        DB::table('categories')-> insert(['category'=>'Sports', 'img'=>'default.jpg']);
+        DB::table('categories')->insert(['category'=>'Art', 'img'=>'default.jpg']);
+        DB::table('categories')->insert(['category'=>'Music', 'img'=>'default.jpg']);
+        DB::table('categories')->insert(['category'=>'Photography', 'img'=>'default.jpg']);
+        DB::table('categories')->insert(['category'=>'Sports', 'img'=>'default.jpg']);
     }
 }

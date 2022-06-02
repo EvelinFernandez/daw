@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
         /*$this->truncateTables([
             'users'
         ]);*/
+        //php artisan make:seeder NombreSeeder - crear seeeder
+        //php artisan db:seed - ejecutar e insertar los datosa en la bd
         $this->call(UsersSeeder::class);
         $this->call(CategoriesSeeder::class);
     }

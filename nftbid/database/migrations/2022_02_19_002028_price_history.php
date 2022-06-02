@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('favorites', function (Blueprint $table) {
+        Schema::create('price_history', function (Blueprint $table){
             $table->increments('id');
             $table->integer('id_nft')->unsigned();
+            $table->double('price');
+            $table->timestamps();  
             $table->foreign('id_nft')->references('id')->on('nfts');
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->timestamps();
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('favorites');
+        Schema::dropIfExists('price_history');
     }
 };

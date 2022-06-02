@@ -15,21 +15,22 @@ return new class extends Migration
     {
         Schema::create('nfts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('description');
-            $table->integer('base_price');
-            $table->string('img');
-            $table->string('token_id');
-            $table->string('token_standar');
-            $table->string('blockchain_type');
-            $table->string('metadata');
-            $table->integer('likes');
+            $table->string("name");
+            $table->string("description");
+            $table->double('base_price');
+            $table->string("image");
+            $table->string("token_id");
+            $table->string("token_standar");
+            $table->string("blockchain_type");
+            $table->string("metadata");
+            $table->integer("likes");
             $table->string('slug');
             $table->integer('id_category')->unsigned();
-            $table->foreign('id_category')->references('id')->on('categories');
             $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();
+            $table->foreign('id_category')->references('id')->on('categories');
+            $table->foreign('id_user')->references('id')->on('users');
+            
         });
     }
 

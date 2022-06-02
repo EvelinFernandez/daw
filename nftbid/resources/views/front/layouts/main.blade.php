@@ -8,39 +8,39 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Title Tag  -->
-    <title>{{ $title }}</title>
+    <title>{{ $title}}</title>
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="{{ asset ('images/favicon.png')}}">
+	<link rel="icon" type="image/png" href="{{ asset('front/images/favicon.png')}}">
 	<!-- Web Font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 	
 	<!-- StyleSheet -->
 	
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="{{ asset('/front/css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{ asset('front/css/bootstrap.css')}}">
 	<!-- Magnific Popup -->
-    <link rel="stylesheet" href="{{ asset('/frontcss/magnific-popup.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/css/magnific-popup.min.css')}}">
 	<!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('/frontcss/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/css/font-awesome.css')}}">
 	<!-- Fancybox -->
-	<link rel="stylesheet" href="{{ asset('/frontcss/jquery.fancybox.min.css')}}">
+	<link rel="stylesheet" href="{{ asset('front/css/jquery.fancybox.min.css')}}">
 	<!-- Themify Icons -->
-    <link rel="stylesheet" href="{{ asset('/frontcss/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/css/themify-icons.css')}}">
 	<!-- Nice Select CSS -->
-    <link rel="stylesheet" href="{{ asset('/frontcss/niceselect.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/css/niceselect.css')}}">
 	<!-- Animate CSS -->
-    <link rel="stylesheet" href="{{ asset('/frontcss/animate.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/css/animate.css')}}">
 	<!-- Flex Slider CSS -->
-    <link rel="stylesheet" href="{{ asset('/frontcss/flex-slider.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/css/flex-slider.min.css')}}">
 	<!-- Owl Carousel -->
-    <link rel="stylesheet" href="{{ asset('/frontcss/owl-carousel.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/css/owl-carousel.css')}}">
 	<!-- Slicknav -->
-    <link rel="stylesheet" href="{{ asset('/frontcss/slicknav.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/css/slicknav.min.css')}}">
 	
 	<!-- Eshop StyleSheet -->
-	<link rel="stylesheet" href="{{ asset('/frontcss/reset.css')}}">
-	<link rel="stylesheet" href="{{ asset('/frontstyle.css')}}">
-    <link rel="stylesheet" href="{{ asset('/frontcss/responsive.css')}}">
+	<link rel="stylesheet" href="{{ asset('front/css/reset.css')}}">
+	<link rel="stylesheet" href="{{ asset('front/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/css/responsive.css')}}">
 
 	
 	
@@ -58,12 +58,13 @@
 	</div>
 	<!-- End Preloader -->
 	
-	@yield('contenido')
-
+	
 	<!-- Header -->
 	@include('front.layouts.header')
 	<!--/ End Header -->
-	
+		
+	@yield('contenido')
+
 	<!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -178,40 +179,40 @@
     <!-- Modal end -->
 	
 	<!-- Start Footer Area -->
-	@include("front.layouts.footer")
+	@include('front.layouts.footer')
 	<!-- /End Footer Area -->
  
 	<!-- Jquery -->
-    <script src="{{ asset ('js/jquery.min.js')}}"></script>
-    <script src="{{ asset ('s/jquery-migrate-3.0.0.js')}}"></script>
-	<script src="{{ asset ('js/jquery-ui.min.js')}}"></script>
+    <script src="{{ asset('front/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('front/js/jquery-migrate-3.0.0.js')}}"></script>
+	<script src="{{ asset('front/js/jquery-ui.min.js')}}"></script>
 	<!-- Popper JS -->
-	<script src="{{ asset ('js/popper.min.js')}}"></script>
+	<script src="{{ asset('front/js/popper.min.js')}}"></script>
 	<!-- Bootstrap JS -->
-	<script src="{{ asset ('js/bootstrap.min.js')}}"></script>
+	<script src="{{ asset('front/js/bootstrap.min.js')}}"></script>
 	<!-- Color JS -->
-	<script src="{{ asset ('js/colors.js')}}"></script>
+	<script src="{{ asset('front/js/colors.js')}}"></script>
 	<!-- Slicknav JS -->
-	<script src="{{ asset ('js/slicknav.min.js')}}"></script>
+	<script src="{{ asset('front/js/slicknav.min.js')}}"></script>
 	<!-- Owl Carousel JS -->
-	<script src="{{ asset ('js/owl-carousel.js')}}"></script>
+	<script src="{{ asset('front/js/owl-carousel.js')}}"></script>
 	<!-- Magnific Popup JS -->
-	<script src="{{ asset ('js/magnific-popup.js')}}"></script>
+	<script src="{{ asset('front/js/magnific-popup.js')}}"></script>
 	<!-- Waypoints JS -->
-	<script src="{{ asset ('js/waypoints.min.js')}}"></script>
+	<script src="{{ asset('front/js/waypoints.min.js')}}"></script>
 	<!-- Countdown JS -->
-	<script src="{{ asset ('js/finalcountdown.min.js')}}"></script>
+	<script src="{{ asset('front/js/finalcountdown.min.js')}}"></script>
 	<!-- Nice Select JS -->
-	<script src="{{ asset ('js/nicesellect.js')}}"></script>
+	<script src="{{ asset('front/js/nicesellect.js')}}"></script>
 	<!-- Flex Slider JS -->
-	<script src="{{ asset ('js/flex-slider.js')}}"></script>
+	<script src="{{ asset('front/js/flex-slider.js')}}"></script>
 	<!-- ScrollUp JS -->
-	<script src="{{ asset ('js/scrollup.js')}}"></script>
+	<script src="{{ asset('front/js/scrollup.js')}}"></script>
 	<!-- Onepage Nav JS -->
-	<script src="{{ asset ('js/onepage-nav.min.js')}}"></script>
+	<script src="{{ asset('front/js/onepage-nav.min.js')}}"></script>
 	<!-- Easing JS -->
-	<script src="{{ asset ('js/easing.js')}}"></script>
+	<script src="{{ asset('front/js/easing.js')}}"></script>
 	<!-- Active JS -->
-	<script src="{{ asset ('js/active.js')}}"></script>
+	<script src="{{ asset('front/js/active.js')}}"></script>
 </body>
 </html>

@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Dash\ProductosController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dash\ProductosController;
 use App\Http\Controllers\Dash\CategoriesController;
+use App\Http\Controllers\Front\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,30 +16,35 @@ use App\Http\Controllers\Dash\CategoriesController;
 |
 */
 
-Route::get('/', function () {
-    return view('front.index');
+Route::get('/', [IndexController::class,'index']);
+Route::get('/search', [IndexController::class,'buscar']);
+Route::get('/productos/{slug}',[IndexController::class,'detalles']);
+Route::group(['prefix'=>'admin','as'=>'admin'],function(){
+    Route::get('/', function () {return view('dash.index');});
+    Route::get('/productos',[ProductosController::class, 'miFuncion']);
+    Route::post('/productos',[ProductosController::class, 'insertar']);
+    Route::post('/categorias/update',[CategoriesController::class, 'update']);
+    Route::get('/reporte/',[ProductosController::class,'reporte']);
+    //Route::get('/categorias',[CategoriesController::class, 'index']);
+    //Route::post('/categorias',[CategoriesController::class, 'store']);
+    Route::resource('categorias',CategoriesController::class);
 });
-Route::get('/admin', function () {
-    return view('dash.index');
-});
-Route::get('/admin/productos', [ProductosController::class, 'miFuncion']);
-Route::post('/admin/productos', [ProductosController::class, 'insertar']);
 
-Route::get('/admin/categorias', [CategoriesController::class, 'index']);
-Route::post('/admin/categorias', [CategoriesController::class, 'store']);
+
+
 Route::get('/contacto',function(){
-    echo "ESTAS EN CONTACTO";
+    echo "Hola estas en contacto";
 });
 Route::get('/productos',function(){
-    $color="#fa0011";
-    $usuario = "Lucrecia Gomez";
+    $color="#fA0011";
+    $usuario="Doroteo Arango";
     $num = rand(1,50);
-
     return view('front.productos')
-            ->with('colorsote', $color)
-            ->with('usuario', $usuario)
-            ->with('numero', $num);
+        ->with('colorsote', $color)
+        ->with('usuario', $usuario)
+        ->with('numero', $num);
 });
-Auth::routes();
 
+Auth::routes();
+Route::get('/buscar',[IndexController::class,'buscar']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

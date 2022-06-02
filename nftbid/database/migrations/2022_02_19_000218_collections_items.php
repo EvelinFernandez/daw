@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bids', function (Blueprint $table){
+        Schema::create('collections_items', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_collection')->unsigned();
+            $table->integer('created_by')->unsigned();
             $table->integer('id_nft')->unsigned();
+            $table->timestamps();  
+            $table->foreign('id_collection')->references('id')->on('collections');
+            $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('id_nft')->references('id')->on('nfts');
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->integer('amount');
-            $table->timestamps();
-
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('collections_items');
     }
 };
